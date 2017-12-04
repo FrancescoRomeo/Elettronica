@@ -22,6 +22,11 @@
 			<message>L'username ${username} non è valido, deve essere compreso
 				tra ${minLength} e ${maxLength} caratteri. </message>
 		</field-validator>
+		<field-validator type="usernameexist">
+
+			<message key="username.exist"></message>
+
+		</field-validator>
 	</field>
 
 	<field name="cliente.email">
@@ -32,6 +37,7 @@
 			<message>L'email ${cliente.email} non è valida</message>
 		</field-validator>
 	</field>
+	
 	<validator type="expression">
 		<param name="expression">cliente.username != cliente.password</param>
 		<message>Username and password can't be the same.</message>

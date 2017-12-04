@@ -21,8 +21,6 @@ public class Register extends ActionSupport{
 
 	public String execute() throws Exception{
 		
-		System.out.println(cliente.getUsername());
-		
 		cdao.creaCliente(cliente);
 		
 		

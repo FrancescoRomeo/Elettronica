@@ -62,7 +62,7 @@
 		</action>
 		
 			<action name="AreaRiservataCliente">
-			<result name="success" type="redirect">/WebApp/ProfiloCliente.jsp</result>
+			<result name="success">/WEB-INF/ProfiloCliente.jsp</result>
 			<interceptor-ref name="authenticationClienteInterceptor"/>
 		</action>
 	</package>
