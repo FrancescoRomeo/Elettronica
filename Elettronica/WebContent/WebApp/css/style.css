@@ -1408,14 +1408,18 @@ div.login-form-wrap {
     text-align: center;
     padding: 1%;
 }
-#side-nav  li:hover ul { 
-	display: block; 
+/* #side-nav  li:hover ul { 
+	display: none; 
 	}
-
+ */
 #side-nav li:hover  a {
   color:black;
 }
 #side-nav  li:hover ul li:hover {
   background-color:#f4f4f4;
   background-image:none;
+}
+
+td, th {
+	padding:10px;
 }

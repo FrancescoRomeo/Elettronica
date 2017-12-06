@@ -11,13 +11,18 @@
 <script type="text/javascript" language="javascript">
 function visualizza(id){
   if (document.getElementById){
-    if(document.getElementById(id).style.display == 'none'){
+	  if(!document.getElementById(id).style.display){
+		  document.getElementById(id).style.display = 'block';
+	  }
+	  else if(document.getElementById(id).style.display == 'none'){
+    
       document.getElementById(id).style.display = 'block';
     }else{
       document.getElementById(id).style.display = 'none';
     }
   }
 }
+window.onload=Start();
 </script>
 <s:include value="../../../WebApp/Header.jsp"></s:include>
 
@@ -48,7 +53,7 @@ function visualizza(id){
 	
 	<div id="side-nav">
 	<ul>
-    <li onclick="visualizza('menuInserisci')"><a style="display: block; float:none; color: #FFF;">INSERISCI</a>
+    <li onclick="visualizza('menuInserisci')"><a class="button" style="display: block; float:none; color: #FFF;">INSERISCI</a>
     <ul id="menuInserisci" class="header-menu-tendina">
     <li><a href="admin/registraAdmin.jsp">Registra Admin</a></li>
 	<li><a href="cliente/registraCliente.jsp">Registra Cliente</a></li>
