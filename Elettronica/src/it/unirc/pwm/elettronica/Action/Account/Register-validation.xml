@@ -1,45 +1,67 @@
 <!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+
         "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
 <validators>
+
 	<field name="cliente.password">
+
 		<field-validator type="requiredstring">
-			<message key="password.required"></message>
+
+			<message key="global.password.required"></message>
+
 		</field-validator>
-		<field-validator type="stringlength">
-			<param name="maxLength">10</param>
-			<param name="minLength">6</param>
-			<message>La password deve essere compresa tra 6 e 10 caratteri.
+
+		<field-validator type="passwordstrenght">
+
+			<message key="password.short">
+
 			</message>
+
 		</field-validator>
+
 	</field>
+
 	<field name="cliente.username">
+
 		<field-validator type="requiredstring">
-			<message>Username is required.</message>
+
+			<message key="global.username.required"></message>
+
 		</field-validator>
-		<field-validator type="stringlength">
-			<param name="maxLength">8</param>
-			<param name="minLength">5</param>
-			<message>L'username ${username} non è valido, deve essere compreso
-				tra ${minLength} e ${maxLength} caratteri. </message>
-		</field-validator>
+
 		<field-validator type="usernameexist">
 
 			<message key="username.exist"></message>
 
 		</field-validator>
+
 	</field>
 
+
+
 	<field name="cliente.email">
+
 		<field-validator type="requiredstring">
+
 			<message>You must enter a value for email.</message>
+
 		</field-validator>
+
 		<field-validator type="email">
+
 			<message>L'email ${cliente.email} non è valida</message>
+
 		</field-validator>
+
 	</field>
-	
+
 	<validator type="expression">
+
 		<param name="expression">cliente.username != cliente.password</param>
+
 		<message>Username and password can't be the same.</message>
+
 	</validator>
+
 </validators>

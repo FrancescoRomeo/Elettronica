@@ -12,7 +12,7 @@
     
 </head>
 <body>
-<jsp:include page="Header.jsp"/>
+<s:include value="Header.jsp"></s:include>
 
 <div class="product-big-title-area">
 		<div class="container">
@@ -27,17 +27,22 @@
 	</div>
 <div class="maincontent-area">
 <div class="container">
-<div class="login-form-wrap">
-		<s:form action="Login" style="text-align: center; margin: auto;">
-    	<s:textfield name="username" key="label.cliente.username" requiredLabel="true"/>
-    	<s:password name="password" key="label.cliente.password" requiredLabel="true"/>
+	<div class="row">
+	<div class="col-md-12">
+		<div class="login-form-wrap">
+		<s:form action="Login">
+    	<s:textfield name="username" key="global.label.username" requiredLabel="true"/>
+    	<s:password name="password" key="global.label.password" requiredLabel="true"/>
     	<s:submit value="Accedi"/>
 		</s:form>
-	    <hr>
+		</div>
+	</div>
+	</div>
+
+<div class="woocommerce-info" style="text-align: center; margin-top: 30px">Non hai un account? <a href="<s:url action='Registration' namespace='/'/>">Registrati!</a></div>
 </div>
-<div class="woocommerce-info" style="text-align: center;">Non hai un account? <a href="<s:url action='Registration' namespace='/'/>">Registrati!</a></div>
 </div>
 </div>
-<jsp:include page="Footer.jsp"/>
+<s:include value="Footer.jsp"></s:include>
 </body>
 </html>
